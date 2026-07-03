@@ -33,7 +33,7 @@ export default function ScrollFlow() {
 
   return (
     <div
-      className="pointer-events-none fixed inset-0 z-[1] overflow-hidden"
+      className="pointer-events-none fixed inset-0 z-[1] overflow-hidden max-md:opacity-70 lg:opacity-100"
       aria-hidden="true"
     >
       {/* Ambient scroll-driven glow */}

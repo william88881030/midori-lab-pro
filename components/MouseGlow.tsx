@@ -28,7 +28,7 @@ export default function MouseGlow() {
   );
 
   useEffect(() => {
-    const media = window.matchMedia("(pointer: fine) and (min-width: 769px)");
+    const media = window.matchMedia("(pointer: fine) and (min-width: 1024px)");
 
     const update = () => {
       setEnabled(media.matches && !reduceMotion);

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 
 const CARD_ICONS = [
@@ -91,19 +92,30 @@ function WhyCard({
   index: number;
 }) {
   const reduceMotion = useReducedMotion();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia("(max-width: 767px)");
+    const update = () => setIsMobile(media.matches);
+    update();
+    media.addEventListener("change", update);
+    return () => media.removeEventListener("change", update);
+  }, []);
+
+  const disableFloat = reduceMotion || isMobile;
 
   return (
     <motion.article
       variants={cardVariant}
       animate={
-        reduceMotion
+        disableFloat
           ? undefined
           : {
               y: [0, -6, 0],
             }
       }
       transition={
-        reduceMotion
+        disableFloat
           ? undefined
           : {
               y: {
@@ -115,7 +127,7 @@ function WhyCard({
             }
       }
       whileHover={{
-        y: reduceMotion ? 0 : -4,
+        y: disableFloat ? 0 : -4,
         transition: { duration: 0.35 },
       }}
       className="group relative rounded-[28px] border border-white/[0.08] bg-white/[0.03] p-8 shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl transition-[border-color,box-shadow] duration-500 hover:border-emerald-400/25 hover:shadow-[0_24px_70px_rgba(0,0,0,0.4),0_0_48px_rgba(16,185,129,0.1)] md:p-9"
@@ -152,7 +164,7 @@ export default function WhySection() {
   return (
     <section
       id="why"
-      className="relative overflow-hidden bg-black py-24 md:py-32 lg:py-36"
+      className="relative overflow-hidden bg-black py-24 max-md:py-28 md:py-32 lg:py-36"
     >
       <div className="noise-overlay opacity-[0.03]" aria-hidden="true" />
 
@@ -166,7 +178,7 @@ export default function WhySection() {
         aria-hidden="true"
       />
 
-      <div className="relative mx-auto max-w-[1400px] px-6 md:px-12 lg:px-16">
+      <div className="relative mx-auto max-w-[1400px] px-5 md:px-12 lg:px-16">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -187,7 +199,7 @@ export default function WhySection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
-          className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:gap-7"
+          className="grid grid-cols-1 gap-5 max-md:gap-6 md:grid-cols-2 md:gap-6 lg:gap-7"
         >
           {t.why.cards.map((card, index) => (
             <WhyCard

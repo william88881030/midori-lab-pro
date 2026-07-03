@@ -22,12 +22,12 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden bg-[#07110d] py-24 md:py-32 lg:py-36"
+      className="relative overflow-hidden bg-[#07110d] py-24 max-md:py-28 md:py-32 lg:py-36"
     >
       <div className="noise-overlay opacity-[0.035]" aria-hidden="true" />
 
-      <div className="relative mx-auto max-w-[1400px] px-6 md:px-12 lg:px-16">
-        <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-[45%_55%] lg:gap-16 xl:gap-20">
+      <div className="relative mx-auto max-w-[1400px] px-5 md:px-12 lg:px-16">
+        <div className="grid grid-cols-1 items-center gap-14 max-md:gap-16 lg:grid-cols-[45%_55%] lg:gap-16 xl:gap-20">
           {/* Left column */}
           <div className="lg:pr-6">
             <motion.p
@@ -75,7 +75,7 @@ export default function AboutSection() {
               variants={fadeUp}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="group mt-12 inline-flex items-center gap-3 rounded-full border border-white/30 px-8 py-3.5 text-[11px] tracking-[0.22em] text-white/88 transition-colors duration-300 hover:border-emerald-400/45 hover:text-white"
+              className="group mt-12 inline-flex items-center gap-3 rounded-full border border-white/30 px-8 py-3.5 text-[11px] tracking-[0.22em] text-white/88 transition-colors duration-300 hover:border-emerald-400/45 hover:text-white max-md:mt-14"
             >
               {t.about.cta}
               <span

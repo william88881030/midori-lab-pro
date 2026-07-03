@@ -1,9 +1,18 @@
 export default function Aurora() {
   return (
     <div
-      className="pointer-events-none absolute inset-0 overflow-hidden bg-black"
+      className="pointer-events-none absolute inset-0 overflow-hidden bg-black max-md:scale-[1.12] max-md:opacity-90 lg:scale-100 lg:opacity-100"
+      style={{ transformOrigin: "center 42%" }}
       aria-hidden="true"
     >
+      {/* Mobile center mask — keeps hero copy legible */}
+      <div
+        className="absolute inset-0 md:hidden"
+        style={{
+          background:
+            "radial-gradient(ellipse 58% 48% at 50% 44%, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.42) 42%, transparent 68%)",
+        }}
+      />
       {/* Top-left aurora ribbon sweep */}
       <div
         className="absolute -left-[18%] -top-[12%] h-[72%] w-[62%]"

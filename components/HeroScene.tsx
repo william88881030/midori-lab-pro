@@ -75,7 +75,7 @@ function ScrollIndicator() {
   const { t } = useLanguage();
 
   return (
-    <div className="absolute bottom-10 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center">
+    <div className="absolute bottom-10 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center max-md:bottom-7 lg:bottom-10">
       <div
         className="pointer-events-none absolute -inset-x-16 -inset-y-8"
         style={{
@@ -108,22 +108,22 @@ export default function HeroScene() {
       <Starfield />
       <div className="noise-overlay" aria-hidden="true" />
 
-      <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
-        <h1 className="whitespace-nowrap text-[clamp(48px,4.2vw,72px)] font-extralight leading-none tracking-[0.36em] text-white sm:tracking-[0.4em] lg:tracking-[0.42em]">
+      <div className="relative z-10 flex h-full flex-col items-center justify-center px-5 pt-16 text-center max-md:pb-8 md:px-6 md:pt-0 lg:px-6">
+        <h1 className="whitespace-nowrap text-[clamp(48px,4.2vw,72px)] font-extralight leading-none tracking-[0.36em] text-white max-md:max-w-[92vw] max-md:text-[clamp(30px,8.8vw,42px)] max-md:tracking-[0.2em] sm:tracking-[0.4em] lg:tracking-[0.42em]">
           {t.hero.title}
         </h1>
 
-        <p className="mt-5 text-[20px] font-light tracking-[0.58em] text-emerald-400/90">
+        <p className="mt-5 text-[20px] font-light tracking-[0.58em] text-emerald-400/90 max-md:mt-4 max-md:text-[17px] max-md:tracking-[0.44em] lg:text-[20px] lg:tracking-[0.58em]">
           {t.hero.subtitle}
         </p>
 
-        <p className="mt-6 text-[16px] font-light tracking-[0.04em] text-white/75">
+        <p className="mt-6 max-w-[90vw] text-[16px] font-light tracking-[0.04em] text-white/75 max-md:mt-5 max-md:text-[15px] max-md:leading-[1.6] lg:text-[16px]">
           {t.hero.tagline}
         </p>
 
         <button
           type="button"
-          className="mt-10 rounded-full border border-white/30 px-14 py-3.5 text-[11px] tracking-[0.24em] text-white/88"
+          className="mt-10 rounded-full border border-white/30 px-14 py-3.5 text-[11px] tracking-[0.24em] text-white/88 max-md:mt-9 max-md:px-12 lg:mt-10 lg:px-14"
         >
           {t.hero.explore}
         </button>

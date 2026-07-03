@@ -145,7 +145,7 @@ export default function ProductsSection() {
   return (
     <section
       id="products"
-      className="relative overflow-hidden bg-[#07110d] py-24 md:py-32 lg:py-36"
+      className="relative overflow-hidden bg-[#07110d] py-24 max-md:py-28 md:py-32 lg:py-36"
     >
       <div className="noise-overlay opacity-[0.035]" aria-hidden="true" />
 
@@ -158,7 +158,7 @@ export default function ProductsSection() {
         aria-hidden="true"
       />
 
-      <div className="relative mx-auto max-w-[1400px] px-6 md:px-12 lg:px-16">
+      <div className="relative mx-auto max-w-[1400px] px-5 md:px-12 lg:px-16">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -182,7 +182,7 @@ export default function ProductsSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
-          className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-7 lg:grid-cols-3 lg:gap-8"
+          className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-7 lg:grid-cols-3 lg:gap-8"
         >
           {t.products.items.map((product, index) => (
             <ProductCard
