@@ -39,7 +39,7 @@ export const translations: TranslationMap = {
     hero: {
       ariaLabel: "Hero",
       title: "MIDORI LAB",
-      subtitle: "Suiken",
+      subtitle: "翠研",
       tagline: "Creating the Future of Green",
       explore: "EXPLORE",
       scroll: "SCROLL TO DISCOVER",
@@ -171,7 +171,7 @@ export const translations: TranslationMap = {
     hero: {
       ariaLabel: "主視覺",
       title: "MIDORI LAB",
-      subtitle: "翠　研",
+      subtitle: "翠研",
       tagline: "創造綠色的未來",
       explore: "探索",
       scroll: "向下探索",
@@ -304,7 +304,7 @@ export const translations: TranslationMap = {
     hero: {
       ariaLabel: "ヒーロー",
       title: "MIDORI LAB",
-      subtitle: "翠　研",
+      subtitle: "翠研",
       tagline: "緑の未来を創る",
       explore: "探索する",
       scroll: "スクロールして探索",

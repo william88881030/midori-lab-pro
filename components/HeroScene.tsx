@@ -3,7 +3,6 @@
 import { useCallback, useEffect, useRef } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import Aurora from "./Aurora";
-import MouseGlow from "./MouseGlow";
 
 interface Star {
   x: number;
@@ -106,7 +105,6 @@ export default function HeroScene() {
       aria-label={t.hero.ariaLabel}
     >
       <Aurora />
-      <MouseGlow />
       <Starfield />
       <div className="noise-overlay" aria-hidden="true" />
 

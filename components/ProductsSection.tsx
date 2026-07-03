@@ -46,10 +46,12 @@ function ProductCard({
   index: number;
 }) {
   const reduceMotion = useReducedMotion();
+  const titleId = `product-title-${index}`;
 
   return (
     <motion.article
       variants={cardVariant}
+      aria-labelledby={titleId}
       whileHover={
         reduceMotion
           ? undefined
@@ -72,7 +74,7 @@ function ProductCard({
 
       <div className="relative overflow-hidden rounded-[32px] border border-white/[0.08] bg-white/[0.03] shadow-[0_20px_60px_rgba(0,0,0,0.38)] backdrop-blur-xl transition-[border-color,box-shadow] duration-500 group-hover:border-emerald-400/22 group-hover:shadow-[0_28px_80px_rgba(0,0,0,0.45),0_0_56px_rgba(16,185,129,0.1)]">
         {/* Image */}
-        <div className="relative aspect-[4/3] overflow-hidden">
+        <div className="relative aspect-[4/3] overflow-hidden [&_img]:overflow-hidden [&_img]:text-[0px] [&_img]:leading-[0] [&_img]:text-transparent">
           <motion.div
             className="absolute inset-0"
             animate={
@@ -91,10 +93,16 @@ function ProductCard({
           >
             <Image
               src={image}
-              alt={title}
+              alt=""
+              aria-hidden="true"
+              role="presentation"
               fill
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.04]"
+              style={{ color: "transparent" }}
+              onError={(event) => {
+                event.currentTarget.style.display = "none";
+              }}
             />
           </motion.div>
 
@@ -109,7 +117,10 @@ function ProductCard({
             aria-hidden="true"
           />
 
-          <h3 className="text-[18px] font-light tracking-[0.04em] text-white transition-colors duration-500 group-hover:text-emerald-50">
+          <h3
+            id={titleId}
+            className="text-[18px] font-light tracking-[0.04em] text-white transition-colors duration-500 group-hover:text-emerald-50"
+          >
             {title}
           </h3>
 
